@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@OsPiquiniques - Parcerias Estratégicas Pet</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700;800&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: #2C2C2C;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Cores da paleta */
+        :root {
+            --rosa-primaria: #E85B9A;
+            --roxo-glitter: #8B4FA8;
+            --branco: #FFFFFF;
+            --cinza-escuro: #2C2C2C;
+            --rosa-claro: #F5D4E0;
+            --roxo-claro: #E6D9F0;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(135deg, var(--rosa-primaria) 0%, var(--roxo-glitter) 100%);
+            padding: 1rem 2rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 4px 15px rgba(232, 91, 154, 0.2);
+        }
+
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo-text {
+            color: var(--branco);
+            font-size: 1.5rem;
+            font-weight: 800;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        .nav-links a {
+            color: var(--branco);
+            text-decoration: none;
+            font-weight: 600;
+            transition: opacity 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            opacity: 0.8;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(180deg, var(--branco) 0%, var(--rosa-claro) 100%);
+            padding: 4rem 2rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -10%;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(139, 79, 168, 0.1) 0%, transparent 70%);
+            border-radius: 50%;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(20px); }
+        }
+
+        .hero-content {
+            max-width: 900px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .logo-container {
+            margin-bottom: 2rem;
+            animation: fadeInScale 0.8s ease-out;
+        }
+
+        @keyframes fadeInScale {
+            from {
+                opacity: 0;
+                transform: scale(0.9);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        .logo-container img {
+            max-width: 280px;
+            width: 100%;
+            height: auto;
+            filter: drop-shadow(0 10px 30px rgba(232, 91, 154, 0.3));
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            font-family: 'Poppins', sans-serif;
+            color: var(--rosa-primaria);
+            margin-bottom: 1rem;
+            font-weight: 800;
+            line-height: 1.2;
+        }
+
+        .tagline {
+            font-size: 1.3rem;
+            color: var(--roxo-glitter);
+            margin-bottom: 2rem;
+            font-weight: 600;
+        }
+
+        /* Seção de Proposição */
+        .proposition {
+            background: var(--branco);
+            padding: 4rem 2rem;
+        }
+
+        .section-container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-family: 'Poppins', sans-serif;
+            color: var(--roxo-glitter);
+            margin-bottom: 2rem;
+            text-align: center;
+            font-weight: 800;
+        }
+
+        .intro-text {
+            font-size: 1.1rem;
+            color: var(--cinza-escuro);
+            margin-bottom: 2rem;
+            line-height: 1.8;
+            text-align: center;
+        }
+
+        /* Seção de Animais */
+        .animals-section {
+            background: linear-gradient(180deg, var(--roxo-claro) 0%, var(--branco) 100%);
+            padding: 4rem 2rem;
+        }
+
+        .animals-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .animal-card {
+            background: var(--branco);
+            padding: 2rem;
+            border-radius: 20px;
+            box-shadow: 0 8px 20px rgba(232, 91, 154, 0.15);
+            text-align: center;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+        .animal-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 30px rgba(139, 79, 168, 0.25);
+            border-color: var(--rosa-primaria);
+        }
+
+        .animal-card h3 {
+            font-size: 1.5rem;
+            font-family: 'Poppins', sans-serif;
+            color: var(--rosa-primaria);
+            margin-bottom: 0.5rem;
+            font-weight: 700;
+        }
+
+        .animal-card p {
+            color: var(--cinza-escuro);
+            font-size: 0.95rem;
+        }
+
+        /* Seção de Conteúdo */
+        .content-section {
+            background: var(--rosa-claro);
+            padding: 4rem 2rem;
+        }
+
+        .content-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .content-card {
+            background: var(--branco);
+            padding: 2rem;
+            border-radius: 20px;
+            box-shadow: 0 8px 20px rgba(139, 79, 168, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .content-card:hover {
+            box-shadow: 0 12px 30px rgba(232, 91, 154, 0.2);
+            transform: translateY(-5px);
+        }
+
+        .content-card h3 {
+            font-size: 1.3rem;
+            font-family: 'Poppins', sans-serif;
+            color: var(--roxo-glitter);
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .content-card p {
+            color: var(--cinza-escuro);
+            font-size: 0.95rem;
+            line-height: 1.7;
+        }
+
+        /* Seção de Parceria */
+        .partnership-section {
+            background: linear-gradient(135deg, var(--roxo-glitter) 0%, var(--rosa-primaria) 100%);
+            padding: 4rem 2rem;
+            color: var(--branco);
+        }
+
+        .partnership-content {
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .partnership-section h2 {
+            font-size: 2.5rem;
+            font-family: 'Poppins', sans-serif;
+            margin-bottom: 1.5rem;
+            font-weight: 800;
+        }
+
+        .partnership-details {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 2rem;
+            border-radius: 15px;
+            margin: 2rem 0;
+            backdrop-filter: blur(10px);
+        }
+
+        .partnership-details p {
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+            line-height: 1.8;
+        }
+
+        .price-range {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin: 1rem 0;
+        }
+
+        /* CTA Buttons */
+        .cta-section {
+            background: var(--branco);
+            padding: 4rem 2rem;
+            text-align: center;
+        }
+
+        .cta-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            justify-content: center;
+            margin-top: 2rem;
+        }
+
+        .btn {
+            padding: 1rem 2.5rem;
+            font-size: 1.1rem;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 700;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--rosa-primaria) 0%, var(--roxo-glitter) 100%);
+            color: var(--branco);
+        }
+
+        .btn-primary:hover {
+            transform: scale(1.05);
+            box-shadow: 0 12px 30px rgba(232, 91, 154, 0.4);
+        }
+
+        .btn-secondary {
+            background: var(--rosa-claro);
+            color: var(--roxo-glitter);
+            border: 2px solid var(--rosa-primaria);
+        }
+
+        .btn-secondary:hover {
+            background: var(--rosa-primaria);
+            color: var(--branco);
+            transform: scale(1.05);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--cinza-escuro);
+            color: var(--branco);
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+
+        .footer-content {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .footer-location {
+            font-size: 1rem;
+            margin-top: 1rem;
+            opacity: 0.9;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 2rem;
+            justify-content: center;
+            margin-top: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: var(--rosa-primaria);
+            text-decoration: none;
+            transition: opacity 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            opacity: 0.8;
+            text-decoration: underline;
+        }
+
+        /* Responsivo */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .nav-links {
+                gap: 1rem;
+                font-size: 0.9rem;
+            }
+
+            .logo-container img {
+                max-width: 200px;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .btn {
+                width: 100%;
+                max-width: 300px;
+            }
+
+            .hero {
+                padding: 2rem 1rem;
+            }
+
+            .proposition,
+            .animals-section,
+            .content-section,
+            .partnership-section,
+            .cta-section {
+                padding: 2rem 1rem;
+            }
+        }
+
+        /* Animações de entrada */
+        @keyframes slideInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .section-container,
+        .animal-card,
+        .content-card {
+            animation: slideInUp 0.6s ease-out;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-content">
+            <div class="logo-text">🐾 @OsPiquiniques</div>
+            <nav class="nav-links">
+                <a href="#sobre">Sobre</a>
+                <a href="#animais">Animais</a>
+                <a href="#proposta">Proposta</a>
+                <a href="#contato">Contato</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="logo-container">
+                <img src="logo.png" alt="Meu Mundo Pet - Logo @OsPiquiniques">
+            </div>
+            <h1>Conecte sua marca com 100 mil apaixonados por pets</h1>
+            <p class="tagline">Conteúdo autêntico que vende</p>
+        </div>
+    </section>
+
+    <!-- Seção Sobre -->
+    <section class="proposition" id="sobre">
+        <div class="section-container">
+            <h2 class="section-title">Quem Somos</h2>
+            <p class="intro-text">
+                Somos <strong>@OsPiquiniques</strong>, uma comunidade vibrante com mais de <strong>100 mil apaixonados</strong> pelo universo pet. 
+                Criamos conteúdos 100% autorais, mostrando o dia a dia real dos nossos animais de forma leve, educativa e cheia de carinho.
+            </p>
+            <p class="intro-text">
+                Nossa missão é aproximar sua marca do público de um jeito <strong>autêntico</strong>, gerando confiança, identificação e muita credibilidade.
+            </p>
+        </div>
+    </section>
+
+    <!-- Seção de Animais -->
+    <section class="animals-section" id="animais">
+        <div class="section-container">
+            <h2 class="section-title">Nossa Diversidade Animal</h2>
+            <p class="intro-text">Convivemos com 22 animais de diferentes espécies, permitindo campanhas super específicas e com maior impacto.</p>
+            
+            <div class="animals-grid">
+                <div class="animal-card">
+                    <h3>🐹 Roedores</h3>
+                    <p>Porquinhos-da-índia, Ratos Twister</p>
+                </div>
+                <div class="animal-card">
+                    <h3>🐰 Lagomorfos</h3>
+                    <p>Mini coelho</p>
+                </div>
+                <div class="animal-card">
+                    <h3>🐱 Felinos</h3>
+                    <p>Gatos</p>
+                </div>
+                <div class="animal-card">
+                    <h3>🐕 Caninos</h3>
+                    <p>Cachorro</p>
+                </div>
+                <div class="animal-card">
+                    <h3>🦜 Aves</h3>
+                    <p>Calopsitas e Periquitos</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção de Conteúdo -->
+    <section class="content-section">
+        <div class="section-container">
+            <h2 class="section-title">Nossa Proposta de Parceria</h2>
+            <p class="intro-text">Um mês de conteúdo autêntico pensado para gerar engajamento e resultados reais.</p>
+            
+            <div class="content-grid">
+                <div class="content-card">
+                    <h3>📱 1 Reels</h3>
+                    <p>Vídeo dinâmico e envolvente mostrando seus produtos em ação na rotina dos nossos pets, destacando benefícios e qualidade.</p>
+                </div>
+                <div class="content-card">
+                    <h3>📲 Stories Diários</h3>
+                    <p>Conteúdos interativos para manter sua marca sempre presente e relevante no dia a dia dos nossos seguidores.</p>
+                </div>
+                <div class="content-card">
+                    <h3>📸 3 Publicações Feed</h3>
+                    <p>Posts caprichados em formato Collab que ampliam o alcance e credibilidade da sua marca para ambas as audiências.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção de Parceria -->
+    <section class="partnership-section" id="proposta">
+        <div class="partnership-content">
+            <h2>Como Funciona Nossa Colaboração?</h2>
+            
+            <div class="partnership-details">
+                <p><strong>Permuta dos Produtos:</strong> Seus produtos serão integrados de forma genuína em nossos conteúdos.</p>
+                <p><strong>Valor de Apoio à Produção:</strong></p>
+                <p class="price-range">R$ 350,00 a R$ 500,00</p>
+                <p>Valor simbólico destinado exclusivamente a auxiliar nos custos de produção dos conteúdos, garantindo alta qualidade e profissionalismo.</p>
+                <p style="margin-top: 1.5rem; font-size: 1rem; opacity: 0.95;">
+                    Disponibilizamos um contrato para formalizar toda a parceria, garantindo segurança, transparência e tranquilidade durante toda a colaboração.
+                </p>
+            </div>
+
+            <p style="margin-top: 2rem; font-size: 1.1rem;">
+                <strong>Parcerias que geram resultados reais</strong><br>
+                Confiança, autenticidade, engajamento
+            </p>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section" id="contato">
+        <div class="section-container">
+            <h2 class="section-title">Vamos Construir Algo Incrível Juntos!</h2>
+            <p class="intro-text">
+                Sua marca merece brilhar no Meu Mundo Pet. Conecte-se conosco e descubra como podemos gerar resultados significativos.
+            </p>
+            
+            <div class="cta-buttons">
+                <a href="https://linkbio.co/BellaOsPiquiniques" class="btn btn-primary" target="_blank">
+                    📲 Acesse Nosso Link Bio
+                </a>
+                <a href="https://collshp.com/.ospiquiniques?view=storefront" class="btn btn-primary" target="_blank">
+                    🛍️ Visite Nossa Loja
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <h3>@OsPiquiniques</h3>
+            <p class="footer-location">📍 Copacabana, Rio de Janeiro</p>
+            
+            <div class="footer-links">
+                <a href="https://linkbio.co/BellaOsPiquiniques" target="_blank">Link Bio</a>
+                <a href="https://collshp.com/.ospiquiniques?view=storefront" target="_blank">Loja</a>
+            </div>
+            
+            <p style="margin-top: 2rem; opacity: 0.8; font-size: 0.9rem;">
+                © 2024 @OsPiquiniques - Parcerias Estratégicas Pet<br>
+                Confiança, autenticidade, engajamento
+            </p>
+        </div>
+    </footer>
+</body>
+</html>
